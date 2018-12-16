@@ -1,0 +1,32 @@
+#include <iostream>
+#define constantLoongType long long
+using namespace std;
+
+int main()
+{
+int size;
+cout<<"Enter Board Size : \n";
+cin>>size;
+constantLoongType x,y,power,distance;
+cout<<"Enter Position [X, Y] : ";
+cin>>x>>y;
+cout<<"Enter Power: ";
+cin>>power;
+int arr[size][size];
+
+for(int i = 0;i<size;i++)
+{
+for(int j = 0;j<size;j++)
+{
+distance = max(abs(x-i),abs(y-j));
+if(distance>=power)
+arr[i][j]=0;
+else
+arr[i][j] = power - distance;
+cout<<arr[i][j]<<" ";
+}
+cout<<"\n";
+}
+
+return 0;
+}
